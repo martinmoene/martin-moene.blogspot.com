@@ -1,13 +1,20 @@
-# Compiled Object files
-*.slo
-*.lo
-*.o
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
+*.bak
+*.bmarks
+*.build
+*.pbxuser
+*.mode1v3
+*.suo
+*.obj
+*.exe
+*.lnt
+*.ncb
+*.opt
+*.ilk
+*.pdb
+*.plg
+*.save
+*.user
+*.xcuserstate
+.DS_Store
+Debug
+Release
