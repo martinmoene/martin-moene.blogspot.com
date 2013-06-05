@@ -165,16 +165,9 @@ template <typename E>
 inline exception_ptr
 make_exception_ptr( E const & e )
 {
-    try
-    {
-        throw make_cloneable( e );
-    }
-    catch ( cloneable const & ex )
-    {
-        return ex.dynamic_clone();
-    }
+    // no need to throw as we don't have current_exception()
 
-    return exception_ptr();
+    return make_cloneable( e ).dynamic_clone();
 }
 
 /**
