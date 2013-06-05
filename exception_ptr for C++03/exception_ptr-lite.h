@@ -21,25 +21,49 @@
 #include <stdexcept>
 #include <typeinfo>
 
-// GNUC complains with std::auto_ptr<> because copy-constructor
-// moves from const argument (auto_ptr<>)
+#if defined( __clang__ )                            // clang
+# define STD11_EPL_HAS_STD_SHARED
+
+#elif defined( __GNUC__ ) && __cplusplus >= 201103L // g++ -std=c++11
+# define STD11_EPL_HAS_STD_SHARED
+
+#elif defined( _MSC_VER )
+# define STD11_EPL_COMPILER_IS_MSVC
+# if ( _MSC_VER >= 1200 ) && ( _MSC_VER < 1300 )    // VC6
+#  define STD11_EPL_COMPILER_IS_MSVC6
+# elif ( _MSC_VER >= 1600 )                         // VC2010+
+#  define STD11_EPL_HAS_STD_SHARED
+# endif
+
+#endif
+
 //#define STD11_USE_AUTO_PTR
+
+// std::auto_ptr<>
+// Without option -fpermissive g++ generates a compilation error because
+// the copy-initialiser constructor moves content from its const argument.
 
 #ifdef STD11_USE_AUTO_PTR
 # include <memory>
+# define STD11_SMART_PTR(T) std::auto_ptr<T>
+//#pragma message ("Using std::auto_ptr<>")
 #else
-# if ( _MSC_VER >= 1200 ) && ( _MSC_VER < 1300 )
+# if defined( STD11_EPL_HAS_STD_SHARED )
+#  include <memory>
+#  define STD11_SMART_PTR(T) std::shared_ptr<T>
+//#pragma message ("Using std::shared_ptr<>")
+# elif defined( STD11_EPL_COMPILER_IS_MSVC6 )
    // VC6 correction for Boost 1.51 boost/shared_ptr.hpp:
 #  include <cstdlib>
    namespace std { using ::abort; }
+#  include <boost/shared_ptr.hpp>
+#  define STD11_SMART_PTR(T) boost::shared_ptr<T>
+//#pragma message ("Using boost::shared_ptr<>")
+# else
+#  include <boost/shared_ptr.hpp>
+#  define STD11_SMART_PTR(T) boost::shared_ptr<T>
+//#pragma message ("Using boost::shared_ptr<>")
 # endif
-# include <boost/shared_ptr.hpp>
-#endif
-
-#ifdef STD11_USE_AUTO_PTR
-#define STD11_SMART_PTR(T) std::auto_ptr<T>
-#else
-#define STD11_SMART_PTR(T) boost::shared_ptr<T>
 #endif
 
 namespace std11
