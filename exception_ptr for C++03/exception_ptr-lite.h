@@ -45,23 +45,27 @@
 
 #ifdef STD11_USE_AUTO_PTR
 # include <memory>
-# define STD11_SMART_PTR(T) std::auto_ptr<T>
+# define STD11_SMART_PTR_NAME auto_ptr
+# define STD11_SMART_PTR(T) std::STD11_SMART_PTR_NAME<T>
 //#pragma message ("Using std::auto_ptr<>")
 #else
 # if defined( STD11_EPL_HAS_STD_SHARED )
 #  include <memory>
-#  define STD11_SMART_PTR(T) std::shared_ptr<T>
+#  define STD11_SMART_PTR_NAME shared_ptr
+#  define STD11_SMART_PTR(T) std::STD11_SMART_PTR_NAME<T>
 //#pragma message ("Using std::shared_ptr<>")
 # elif defined( STD11_EPL_COMPILER_IS_MSVC6 )
    // VC6 correction for Boost 1.51 boost/shared_ptr.hpp:
 #  include <cstdlib>
    namespace std { using ::abort; }
 #  include <boost/shared_ptr.hpp>
-#  define STD11_SMART_PTR(T) boost::shared_ptr<T>
+#  define STD11_SMART_PTR_NAME shared_ptr
+#  define STD11_SMART_PTR(T) boost::STD11_SMART_PTR_NAME<T>
 //#pragma message ("Using boost::shared_ptr<>")
 # else
 #  include <boost/shared_ptr.hpp>
-#  define STD11_SMART_PTR(T) boost::shared_ptr<T>
+#  define STD11_SMART_PTR_NAME shared_ptr
+#  define STD11_SMART_PTR(T) boost::STD11_SMART_PTR_NAME<T>
 //#pragma message ("Using boost::shared_ptr<>")
 # endif
 #endif
