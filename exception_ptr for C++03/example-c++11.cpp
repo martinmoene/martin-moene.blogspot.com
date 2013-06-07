@@ -9,7 +9,7 @@ int main()
 
     try
     {
-        throw std::runtime_error("length_error");
+        throw std::runtime_error("runtime_error");
     }
     catch ( std::exception const & e )
     {
@@ -45,5 +45,5 @@ int main()
 // GNUC 4.8.0 -- g++ -Wall -Wextra -std=c++11 -o example-c++11.exe example-c++11.cpp && example-c++11
 
 // Output:
-//   original exception catched as std::exception: length_error
-//   propagated exception catched as std::runtime_error : length_error
+//   original exception catched as std::exception: runtime_error
+//   propagated exception catched as std::runtime_error : runtime_error

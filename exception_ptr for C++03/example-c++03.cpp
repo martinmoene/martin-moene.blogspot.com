@@ -7,7 +7,7 @@ int main()
 
     try
     {
-        throw std::runtime_error("length_error");
+        throw std::runtime_error("runtime_error");
     }
     catch ( std::exception const & e )
     {
