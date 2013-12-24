@@ -103,7 +103,7 @@ struct Segment
 
 Segment::~Segment() {}
 
-using SegmentPtr = std::shared_ptr<Segment>;
+using SegmentPtr = std::unique_ptr<Segment>;
 
 // Factor out code common to all classes using SegmentBase<>:
 
