@@ -21,19 +21,19 @@ int main()
 
         curve.times( Nsweep )
              .scans( scanner )
-             .add  (         Retract().stop_on( distance )   ).unless( onceX )
-             .add  ( once (  Retract().stop_on( distance ) ) ).when  ( onceX )
-             .add  ( times(  Nsection,
+             .add  (        Retract().stop_on( distance )   ).unless( onceX )
+             .add  ( once ( Retract().stop_on( distance ) ) ).when  ( onceX )
+             .add  ( times( Nsection,
                  Section()
-                     .add( Dwell()                       )
-                     .add( Approach().stop_on( threshold ) )
-                     .add( Dwell()                       )
-                     .add( Retract ().stop_on( distance  ) )
-                                                           ) )
+                     .add ( Dwell()                         )
+                     .add ( Approach().stop_on( threshold ) )
+                     .add ( Dwell()                         )
+                     .add ( Retract ().stop_on( distance  ) )
+                                                            ) )
              ;
 
-        std::cout << "\n1.curve.apply(): "; curve.sweep();
-        std::cout << "\n2.curve.apply(): "; curve.sweep();
+        std::cout << "\n1.curve.sweep(): "; curve.sweep();
+        std::cout << "\n2.curve.sweep(): "; curve.sweep();
     }
     catch ( std::exception const & e )
     {
