@@ -105,7 +105,7 @@ Segment::~Segment() {}
 
 using SegmentPtr = std::unique_ptr<Segment>;
 
-// Factor out code common to all classes using SegmentBase<>:
+// Factor out code common to all classes using SegmentParameter<>:
 
 struct SegmentCommon : Segment
 {
@@ -122,7 +122,7 @@ struct SegmentCommon : Segment
 // Tool for static polymorphic method chaining:
 
 template <typename Derived>
-struct SegmentBase : SegmentCommon
+struct SegmentParameter : SegmentCommon
 {
 #define self crtp_cast<Derived>(*this)
 
@@ -137,17 +137,17 @@ struct SegmentBase : SegmentCommon
 
 // Various segment types and curve:
 
-struct Approach : SegmentBase<Approach>
+struct Approach : SegmentParameter<Approach>
 {
     void apply( ScannerPtr scanner ) { print( "A", scanner->type() ); }
 };
 
-struct Retract : SegmentBase<Retract>
+struct Retract : SegmentParameter<Retract>
 {
     void apply( ScannerPtr scanner ) { print("R", scanner->type() ); }
 };
 
-struct Curve : SegmentBase<Curve>
+struct Curve : SegmentParameter<Curve>
 {
     int num_times{ 1 };
     std::vector<SegmentPtr> segments{};
@@ -187,7 +187,7 @@ struct Curve : SegmentBase<Curve>
 
     void sweep()
     {
-        for ( int i = 0; i < num_times; ++ i)
+        for ( int i = 0; i < num_times; ++i)
             apply( the_scanner );
     }
 };

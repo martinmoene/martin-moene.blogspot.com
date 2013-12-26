@@ -139,7 +139,7 @@ Segment::~Segment() {}
 
 using SegmentPtr = std::shared_ptr<Segment>;
 
-// Factor out code common to all classes using SegmentBase<>:
+// Factor out code common to all classes using SegmentParameter<>:
 
 struct SegmentCommon : Segment
 {
@@ -158,7 +158,7 @@ struct SegmentCommon : Segment
 // Tool for static polymorphic method chaining:
 
 template <typename Derived>
-struct SegmentBase : SegmentCommon
+struct SegmentParameter : SegmentCommon
 {
 #define self crtp_cast<Derived>(*this)
 
@@ -173,22 +173,22 @@ struct SegmentBase : SegmentCommon
 
 // Various segment types and modifiers:
 
-struct Approach : SegmentBase<Approach>
+struct Approach : SegmentParameter<Approach>
 {
     void apply( ScannerPtr scanner ) { print( "A", scanner->type() ); }
 };
 
-struct Retract : SegmentBase<Retract>
+struct Retract : SegmentParameter<Retract>
 {
     void apply( ScannerPtr scanner ) { print("R", scanner->type() ); }
 };
 
-struct Dwell : SegmentBase<Dwell>
+struct Dwell : SegmentParameter<Dwell>
 {
     void apply( ScannerPtr scanner ) { print("T", scanner->type() ); }
 };
 
-struct Once : SegmentBase<Once>
+struct Once : SegmentParameter<Once>
 {
     bool is_done = false;
     const SegmentPtr segment;
@@ -218,7 +218,7 @@ struct Once : SegmentBase<Once>
     }
 };
 
-struct Times : SegmentBase<Times>
+struct Times : SegmentParameter<Times>
 {
     const int n;
     const SegmentPtr segment;
@@ -234,16 +234,16 @@ struct Times : SegmentBase<Times>
 
     void apply( ScannerPtr scanner )
     {
-        for ( int i = 0 ; i < n; ++ i )
+        for ( int i = 0 ; i < n; ++i )
             segment->apply( scanner );
     }
 };
 
 // Section, a collection of segments and modifiers:
 
-struct Section : SegmentBase<Section>
+struct Section : SegmentParameter<Section>
 {
-    using SegmentBase<Section>::SegmentBase;
+    using SegmentParameter<Section>::SegmentParameter;
 
     std::vector<SegmentPtr> segments{ };
 
@@ -304,7 +304,7 @@ struct Curve : Section
 
     void sweep()
     {
-        for ( int i = 0; i < num_times; ++ i)
+        for ( int i = 0; i < num_times; ++i)
             apply( the_scanner );
     }
 };
