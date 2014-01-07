@@ -15,7 +15,7 @@ int main()
 
               auto scanner   = create_scanner  ( "Z" );
         const auto distance  = create_condition( "123 nm" );
-        const auto threshold = create_condition( "chan1", ">=", "2.7 V" );
+        const auto threshold = create_condition( "chan1", "<=", "2.7 V" );
 
         Curve curve;
 
