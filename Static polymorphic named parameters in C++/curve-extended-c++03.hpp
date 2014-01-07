@@ -250,7 +250,6 @@ struct Times : SegmentParameter<Times>
 
 struct Section : SegmentParameter<Section>
 {
-//    using SegmentParameter<Section>::SegmentParameter;
     typedef std::vector<SegmentPtr> Segments;
 
     Segments segments;
