@@ -195,7 +195,7 @@ struct Once : SegmentParameter<Once>
 
     template< typename T >
     Once( T const & segment )
-   : segment( new T( segment ) ) {}
+    : segment( std::make_shared<T>( segment ) ) {}
 
     bool done() const
     {
@@ -225,7 +225,7 @@ struct Times : SegmentParameter<Times>
 
     template< typename T >
     Times( int n, T const & segment )
-    : n( n ), segment( new T( segment ) ) {}
+    : n( n ), segment( std::make_shared<T>( segment ) ) {}
 
     void reset()
     {
@@ -250,7 +250,7 @@ struct Section : SegmentParameter<Section>
     template< typename T >
     Section & add( T const & segment )
     {
-        segments.emplace_back( new T( segment ) );
+        segments.emplace_back( std::make_shared<T>( segment ) );
         return *this;
     }
 

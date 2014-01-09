@@ -156,6 +156,9 @@ struct Curve : SegmentParameter<Curve>
     template< typename T >
     Curve & add( T const & segment )
     {
+//      per C++14:
+//      segments.emplace_back( std::make_unique<T>( segment ) );
+
         segments.emplace_back( new T( segment ) );
         return *this;
     }
