@@ -33,6 +33,7 @@
 // - http://eli.thegreenplace.net/2011/05/17/the-curiously-recurring-template-pattern-in-c/ .
 
 #include <boost/shared_ptr.hpp>
+#include <boost/make_shared.hpp>
 
 #include <iostream>
 #include <memory>
@@ -75,10 +76,10 @@ struct ZAxisScanner : ScannerCommon
 
 ScannerPtr create_scanner( std::string type )
 {
-    if      ( type == "B" ) return ScannerPtr( new BiasScanner ()  );
-    else if ( type == "Z" ) return ScannerPtr( new ZAxisScanner() );
+    if      ( type == "B" ) return ScannerPtr( boost::make_shared<BiasScanner >()  );
+    else if ( type == "Z" ) return ScannerPtr( boost::make_shared<ZAxisScanner>() );
 
-    return ScannerPtr( new NullScanner() );
+    return ScannerPtr( boost::make_shared<NullScanner>() );
 }
 
 // Condition interface and several Condition types:
@@ -115,15 +116,15 @@ struct LengthCondition : ConditionCommon
 
 ConditionPtr create_condition( std::string /* channel */, std::string op, std::string /* value */ )
 {
-    if      ( op == "<=" ) return ConditionPtr( new LessEqualThreshold   ( /* channel, value */ ) );
-    else if ( op == ">=" ) return ConditionPtr( new GreaterEqualThreshold( /* channel, value */ ) );
+    if      ( op == "<=" ) return ConditionPtr( boost::make_shared<LessEqualThreshold   >( /* channel, value */ ) );
+    else if ( op == ">=" ) return ConditionPtr( boost::make_shared<GreaterEqualThreshold>( /* channel, value */ ) );
 
-    return ConditionPtr( new NullCondition() );
+    return ConditionPtr( boost::make_shared<NullCondition>() );
 }
 
 ConditionPtr create_condition( std::string /* length */ )
 {
-    return ConditionPtr( new LengthCondition( /* length */ ) );
+    return ConditionPtr( boost::make_shared<LengthCondition>( /* length */ ) );
 }
 
 // Segment interface:
@@ -150,7 +151,7 @@ struct SegmentCommon : Segment
     ConditionPtr the_condition;
 
     SegmentCommon()
-    : the_condition( new NullCondition() ) { }
+    : the_condition( boost::make_shared<NullCondition>() ) { }
 
     void reset() { }
 
@@ -202,7 +203,7 @@ struct Once : SegmentParameter<Once>
 
     template< typename T >
     Once( T const & segment )
-   : is_done( false ), segment( new T( segment ) ) {}
+   : is_done( false ), segment( boost::make_shared<T>( segment ) ) {}
 
     bool done() const
     {
@@ -232,7 +233,7 @@ struct Times : SegmentParameter<Times>
 
     template< typename T >
     Times( int n, T const & segment )
-    : n( n ), segment( new T( segment ) ) {}
+    : n( n ), segment( boost::make_shared<T>( segment ) ) {}
 
     void reset()
     {
@@ -260,7 +261,7 @@ struct Section : SegmentParameter<Section>
     template< typename T >
     Section & add( T const & segment )
     {
-        segments.push_back( SegmentPtr( new T( segment ) ) );
+        segments.push_back( SegmentPtr( boost::make_shared<T>( segment ) ) );
         return *this;
     }
 
@@ -301,7 +302,7 @@ struct Curve : Section
     ScannerPtr the_scanner;
 
     Curve()
-    : num_times( 1 ), the_scanner( new NullScanner() ) { }
+    : num_times( 1 ), the_scanner( boost::make_shared<NullScanner>() ) { }
 
     Curve & times( int n )
     {
