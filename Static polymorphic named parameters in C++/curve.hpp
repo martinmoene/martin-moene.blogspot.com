@@ -3,7 +3,22 @@
 #include <iostream>
 #include <memory>
 #include <string>
+#include <utility>
 #include <vector>
+
+// make_unique:
+
+#if __cplusplus == 201103L
+
+namespace std
+{
+    template< class T, class... Args >
+    unique_ptr<T> make_unique( Args&&... args )
+    {
+        return unique_ptr<T>( new T( std::forward<Args>( args )... ) );
+    }
+}
+#endif
 
 // crtp_cast:
 
@@ -156,10 +171,7 @@ struct Curve : SegmentParameter<Curve>
     template< typename T >
     Curve & add( T const & segment )
     {
-//      per C++14:
-//      segments.emplace_back( std::make_unique<T>( segment ) );
-
-        segments.emplace_back( new T( segment ) );
+        segments.emplace_back( std::make_unique<T>( segment ) );
         return *this;
     }
 
