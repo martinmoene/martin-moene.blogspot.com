@@ -1,5 +1,5 @@
 @echo off
-for %%f in (curve curve-extended) do (
+for %%f in (curve curve-extended curve-extended-times-alt) do (
     echo.
     echo %%f
     g++ -Wall -Wextra -Weffc++ -std=c++11 -o %%f.exe %%f.cpp && %%f.exe
