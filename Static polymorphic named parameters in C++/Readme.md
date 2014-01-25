@@ -16,5 +16,5 @@ Files
 
 `curve-extended-c++03.hpp` - C++03 variant of `curve-extended.hpp`.
 
-`curve-extended-times-alt.hpp` - Variant with `once` and `times` acting as `Segment`. 
+`curve-extended-times-alt.hpp` - Variant with `once` and `times` acting as curve `Section`. 
 
