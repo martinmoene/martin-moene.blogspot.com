@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<rule>
+  <tokenlist>simple</tokenlist>
+  <pattern>if \( \w+ \x3c=? \w+ \) { .*? } (else { )?if \( \w+ \x3c=? \w+ \) { .*? }</pattern>
+  <message>
+    <id>ifClamp</id>
+    <severity>style</severity>
+    <summary>Consider replacing if-else-if with clamp(value, minval, maxval).</summary>
+  </message>
+</rule>

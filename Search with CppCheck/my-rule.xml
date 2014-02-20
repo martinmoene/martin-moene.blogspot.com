@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<rule>
+  <tokenlist>simple</tokenlist>
+  <pattern>if \( \w+ \x3c=? \w+ \) { \w+ = \w+ ; } (else { )?if \( \w+ \x3c=? \w+ \) { \w+ = \w+ ; }</pattern>
+  <message>
+    <id>ifClamp</id>
+    <severity>style</severity>
+    <summary>Consider replacing if-else-if with clamp(value, minval, maxval).</summary>
+  </message>
+</rule>
+
+<!--
+
+- if-else-if:
+  <pattern>if \( \w+ \x3c=? \w+ \) { \w+ = \w+ ; } else { if \( \w+ \x3c=? \w+ \) { \w+ = \w+ ; }</pattern>
+
+- if-[else-]if:
+  <pattern>if \( \w+ \x3c=? \w+ \) { \w+ = \w+ ; } (else { )?if \( \w+ \x3c=? \w+ \) { \w+ = \w+ ; }</pattern>
+
+- any code in blocks
+  <pattern>if \( \w+ \x3c=? \w+ \) { .*? } (else { )?if \( \w+ \x3c=? \w+ \) { .*? }</pattern>
+
+- too greedy: eats all input after initial match to "if ( ... <=? ... ) {":
+  <pattern>if \( \w+ \x3c=? \w+ \) { .* } else { if \( \w+ \x3c=? \w+ \)</pattern>
+-->
