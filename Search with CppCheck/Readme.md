@@ -7,6 +7,10 @@ Files
 -------
 `my-rule.xml` - CppCheck rule to match if-else-if clamp construct.
 
+`my-rule-extended.xml` - CppCheck rule to prevent matching longer if-else-if chains.
+
+`my-rule-loose.xml` - CppCheck rule to match any code in if-else blocks.
+
 `parse-sample.bat` - show CppCheck parse of sample.cpp.
 
 `search-sample.bat` - show CppCheck match of rule my-rule.xml on sample.cpp.

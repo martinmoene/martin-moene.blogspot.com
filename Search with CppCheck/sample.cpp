@@ -70,6 +70,19 @@ int if_else_if_numeric_compact( const int value )
     return clampedValue; // use...
 }
 
+// desired not to match (longer if chain)
+
+int if_else_if_else_if_numeric_compact( const int value )
+{
+    int clampedValue = value;
+
+    if      ( clampedValue < 123 ) clampedValue = 123;
+    else if ( clampedValue > 987 ) clampedValue = 987;
+    else if ( clampedValue > 321 ) clampedValue = 321;
+
+    return clampedValue; // use...
+}
+
 // non-matching:
 
 int nomatch_if_once( int value )
@@ -110,7 +123,7 @@ char * error_return_address_of_local_var()
 void foo()
 {
     int var;
-    
+
     if ( true )
     {
         var = 7;

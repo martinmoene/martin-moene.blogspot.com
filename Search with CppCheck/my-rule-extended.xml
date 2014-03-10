@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <rule>
-  <tokenlist>simple</tokenlist>
-  <pattern>if \( \w+ \x3c=? \w+ \) { [^}]*? } (else { )?if \( \w+ \x3c=? \w+ \) { [^}]*? }</pattern>
+  <tokenlist>normal</tokenlist>
+  <pattern><![CDATA[(?<!else { )if \( \w+ <=? \w+ \) { [^}]*? } else { if \( \w+ <=? \w+ \) { [^}]*? } }]]></pattern>
   <message>
     <id>ifClamp</id>
     <severity>style</severity>
