@@ -8,7 +8,7 @@ To install Visual Studio 6 on a computer running Windows 8.1 you need to take se
 2. [Install Visual Studio 6](#install)  
 3. [Prevent compatibility check interception](#compatibility)  
 4. [Enable using devenv from the command line](#commandline)  
-5. [Create a VC6 command prompt](#prompt)
+5. [Create a VC6 command prompt](#prompt)  
 6. [Wrap up](#wrapup)  
 7. [Notes and references](#references)  
 
