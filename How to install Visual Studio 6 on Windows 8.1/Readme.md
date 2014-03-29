@@ -3,7 +3,7 @@ How to install Visual Studio 6 on Windows 8.1
 
 To install Visual Studio 6 on a computer running Windows 8.1 you need to take several special steps to succeed. Here I describe what I did to install Visual Studio 6 SP6 on Windows 8.1. 
 
-**Contents**
+**Contents**  
 1. [Preparation](#preparation)  
 2. [Install Visual Studio 6](#install)  
 3. [Prevent compatibility check interception](#compatibility)  
