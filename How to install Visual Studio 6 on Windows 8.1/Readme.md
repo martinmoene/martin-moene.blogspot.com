@@ -4,12 +4,13 @@ How to install Visual Studio 6 on Windows 8.1
 To install Visual Studio 6 on a computer running Windows 8.1 you need to take several special steps to succeed. Here I describe what I did to install Visual Studio 6 SP6 on Windows 8.1. 
 
 **Contents**
-1. [Preparation](#preparation)
-2. [Install Visual Studio 6](#install)
-3. [Prevent compatibility check interception](#compatibility)
-4. [Enable using devenv from the command line](#commandline)
-5. [Wrap up](#wrapup)
-6. [Notes and references](#references)
+1. [Preparation](#preparation)  
+2. [Install Visual Studio 6](#install)  
+3. [Prevent compatibility check interception](#compatibility)  
+4. [Enable using devenv from the command line](#commandline)  
+5. [Create a VC6 command prompt](#prompt)
+6. [Wrap up](#wrapup)  
+7. [Notes and references](#references)  
 
 The  procedure uses the nice *Visual Studio 6.0 Installer* by Giorgio Brausi [1][2]. Without using it, the installation didn't finish properly and no uninstall entry was created. 
  
@@ -73,7 +74,7 @@ Trying to run MSDEV.EXE now will result in a
 Enable using devenv from the command line
 -------------------------------------------
 To enable using `DEVENV8.EXE` under the original name from the command line I created program [devenv.cpp](). 
-```
+```C++
 #include <process.h>
 
 const char* path = "C:\\Program Files (uac)\\Microsoft Visual Studio\\Common\\MSDev98\\Bin\\MSDEV8.EXE";
@@ -85,8 +86,42 @@ int main( int argc, char * argv[] )
 
 // cl -nologo -EHsc msdev.cpp
 ```
+
 Compile this program with VC6 or higher and copy it to folder `C:\Program Files (uac)\Microsoft Visual Studio\Common\MSDev98\Bin`.
 
+<a id="prompt"></a>
+Create a VC6 command prompt
+----------------------------
+To enable opening a command prompt for Visual C++ 6, we create a new shortcut.
+- On the desktop, context menu, select `New > Shortcut`.
+- Location of item: `%comspec% /k "C:\Program Files (uac)\Microsoft Visual Studio\VC98\Bin\VCVARS32.bat"`
+- Name for this shortcut: `VC6 Command Prompt`
+- Press Finish
+
+Now move this shortcut to the start menu folder `Microsoft Visual Studio 6.0`:
+- `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Microsoft Visual Studio 6.0`
+
+As an example, start VC6 command prompt and issue `msdev /?`:
+
+```
+Setting environment for using Microsoft Visual C++ tools.
+prompt>msdev /?
+Usage:
+  MSDEV [myprj.dsp|mywksp.dsw]  - load project/workspace
+        [<filename>]            - load source file
+        /?                      - display usage information
+        /EX <macroname>         - execute a VBScript macro
+        /OUT <filename>         - redirect command line output to a file
+        /USEENV                 - ignore tools.options.directories settings
+        /MAKE [<target>] [...]  - build specified target(s)
+              [<project> - <platform> <configname>]
+              [[<project>|ALL] - [DEBUG|RELEASE|ALL]]
+              /CLEAN            - delete intermediate files but don't build
+              /REBUILD          - clean and build
+              /NORECURSE        - don't build dependent projects
+
+prompt>
+```
 
 <a id="wrapup"></a>
 Wrap up
