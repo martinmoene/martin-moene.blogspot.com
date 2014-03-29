@@ -2,7 +2,6 @@
 #include <process.h>
 
 const char* path = "C:\\Program Files (uac)\\Microsoft Visual Studio\\Common\\MSDev98\\Bin\\MSDEV8.EXE";
-//const char* path = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Common\\MSDev98\\Bin\\MSDEV8.EXE";
 
 int main( int argc, char * argv[] )
 {
