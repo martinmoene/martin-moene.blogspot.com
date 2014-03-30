@@ -62,7 +62,8 @@ Install Visual Studio 6
 <a id="compatibility"></a>
 Prevent compatibility check interception
 ------------------------------------------
-Trying to run MSDEV.EXE now will result in a
+Trying to run MSDEV.EXE now will result in a *Microsoft (R) Developer Studio has stopped working* dialog. To cure this:
+
 - Rename `MSDEV.EXE` to `MSDEV8.EXE`
 	`MSDEV.EXE` is located in C:\Program Files (x86)\Microsoft Visual Studio\Common\MSDev98\Bin
 - On `MSDEV8.EXE`, change Properties, Compatibility to: *Windows 7*
