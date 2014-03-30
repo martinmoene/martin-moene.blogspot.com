@@ -33,7 +33,7 @@ Preparation
 	- .../VS6/VSE600ENU3
 - In the next steps, *Visual Studio 6.0 Installer* will prepare the folders to perform the installation from.
 - Specify the root folder where to prepare the folders to install from via 
-`File > Set Root folder...`
+	`File > Set Root folder...`
 	for me this is `D:\Users\Martin\VS6-ROOT`
 - Click `Step 1: Prepare Visual Studion 6.0 ENT` and specify the path to CD #1 of the Visual Studio 6.0 CD you collected above, `.../VS6/VSE600ENU1`. 
 - Click `Step 2: Prepare MSDN Library` and specify the path to CD #1 of the MSDN Library CD you collected above, `.../VS6/MSDN CD1`.
