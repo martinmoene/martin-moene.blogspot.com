@@ -14,7 +14,7 @@ To install Visual Studio 6 on a computer running Windows 8.1 you need to take se
 
 The  procedure uses the nice *Visual Studio 6.0 Installer* by Giorgio Brausi [1][2]. Without using it, the installation didn't finish properly and no uninstall entry was created. 
  
-![](https://dl.dropboxusercontent.com/u/42098891/VisualStudio6.0Installer-v2.1.png)
+![](https://github.com/martinmoene/martin-moene.blogspot.com/blob/master/How%20to%20install%20Visual%20Studio%206%20on%20Windows%208.1/VisualStudio6.0Installer-v2.1.png?raw=true)
 
 <br>
 Note: many default actions are omitted from the following description.
@@ -67,7 +67,7 @@ Trying to run MSDEV.EXE now will result in a
 	`MSDEV.EXE` is located in C:\Program Files (x86)\Microsoft Visual Studio\Common\MSDev98\Bin
 - On `MSDEV8.EXE`, change Properties, Compatibility to: *Windows 7*
 
-	![](https://dl.dropboxusercontent.com/u/42098891/MSDEV8.EXE%20Properties.png)
+	![](https://github.com/martinmoene/martin-moene.blogspot.com/blob/master/How%20to%20install%20Visual%20Studio%206%20on%20Windows%208.1/MSDEV8.EXE-Properties.png?raw=true)
 
 
 <a id="commandline"></a>
