@@ -19,7 +19,7 @@ The  procedure uses the nice *Visual Studio 6.0 Installer* by Giorgio Brausi [1]
 <br>
 Note: many default actions are omitted from the following description.
 
-<a id="preparation"></a>
+<a name="preparation"></a>
 Preparation
 -------------
 - Download and unzip [Visual Studio 6.0 Installer](http://nuke.vbcorner.net/Articles/VB60/VisualStudio6Installer/tabid/93/language/en-US/Default.aspx) [1][2]
@@ -44,7 +44,7 @@ Further preparation:
 - Make sure that `Microsoft Visual Studio` folders from previous *Visual Studio 6* installations are removed as well as its registry entries [5].
 
 
-<a id="install"></a>
+<a name="install"></a>
 Install Visual Studio 6
 ------------------------
 
@@ -66,7 +66,7 @@ Install Visual Studio 6
 	- Accept several defaults
 	- Press `Full` button
 
-<a id="compatibility"></a>
+<a name="compatibility"></a>
 Prevent compatibility check interception
 ------------------------------------------
 Trying to run MSDEV.EXE now will result in a *Microsoft (R) Developer Studio has stopped working* dialog. To cure this:
@@ -78,7 +78,7 @@ Trying to run MSDEV.EXE now will result in a *Microsoft (R) Developer Studio has
 	![](https://github.com/martinmoene/martin-moene.blogspot.com/blob/master/How%20to%20install%20Visual%20Studio%206%20on%20Windows%208.1/MSDEV8.EXE-Properties.png?raw=true)
 
 
-<a id="commandline"></a>
+<a name="commandline"></a>
 Enable using msdev from the command line
 -------------------------------------------
 To enable using `MSDEV8.EXE` under the original name from the command line I created program [msdev.cpp](https://github.com/martinmoene/martin-moene.blogspot.com/blob/master/How%20to%20install%20Visual%20Studio%206%20on%20Windows%208.1/msdev.cpp). 
@@ -97,7 +97,7 @@ int main( int argc, char * argv[] )
 
 Compile this program with VC6 or higher and copy it to folder `C:\Program Files (uac)\Microsoft Visual Studio\Common\MSDev98\Bin`.
 
-<a id="prompt"></a>
+<a name="prompt"></a>
 Create a VC6 command prompt
 ----------------------------
 To enable opening a command prompt for Visual C++ 6, we create a new shortcut.
@@ -131,7 +131,7 @@ Usage:
 prompt>
 ```
 
-<a id="wrapup"></a>
+<a name="wrapup"></a>
 Wrap up
 ---------
 If you want to do the installation all over again and need to remove (part of) the Visual Studio installation by hand, reference [5] may be helpful to see which registry items may need removal.
@@ -139,7 +139,7 @@ If you want to do the installation all over again and need to remove (part of) t
 I also installed WinHlp for Windows 8.1, however you may not need it at all [6].
 
 
-<a id="references"></a>
+<a name="references"></a>
 Notes and references
 ----------------------
 [1] Giorgio Brausi. [Visual Studio 6.0 Installer](http://nuke.vbcorner.net/Articles/VB60/VisualStudio6Installer/tabid/93/language/en-US/Default.aspx).
