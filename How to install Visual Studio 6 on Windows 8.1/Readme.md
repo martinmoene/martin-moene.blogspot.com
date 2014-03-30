@@ -71,7 +71,7 @@ Prevent compatibility check interception
 ------------------------------------------
 Trying to run MSDEV.EXE now will result in a *Microsoft (R) Developer Studio has stopped working* dialog. To cure this:
 
-- Rename `MSDEV.EXE` to `MSDEV8.EXE`  
+- Rename `MSDEV.EXE` to `MSDEV8.EXE` [5]  
 	`MSDEV.EXE` is located in C:\Program Files (x86)\Microsoft Visual Studio\Common\MSDev98\Bin.
 - On `MSDEV8.EXE`, change Properties, Compatibility to: *Windows 7*:
 
@@ -134,9 +134,9 @@ prompt>
 <a name="wrapup"></a>
 Wrap up
 ---------
-If you want to do the installation all over again and need to remove (part of) the Visual Studio installation by hand, reference [5] may be helpful to see which registry items may need removal.
+If you want to do the installation all over again and need to remove (part of) the Visual Studio installation by hand, reference [6] may be helpful to see which registry items may need removal.
 
-I also installed WinHlp for Windows 8.1, however you may not need it at all [6].
+I also installed WinHlp for Windows 8.1, however you may not need it at all [7].
 
 
 <a name="references"></a>
@@ -150,12 +150,12 @@ Notes and references
 
 [4] Wikipedia. [User Account Control (UAC)](http://en.wikipedia.org/wiki/User_Account_Control).
 
-[5] Microsoft. [How To Manually Uninstall Visual Studio with MSDN Library](http://support.microsoft.com/kb/2486971)
+[5] Microsoft Community. [UAC and one program used very regulary](http://answers.microsoft.com/en-us/windows/forum/windows_vista-security/uac-and-one-program-used-very-regulary/67bfc4b5-faff-4de4-be48-f395bf1c519d). gbswales, 12/4/2011.
 
-[6] Microsoft. [Windows Help program (WinHlp32.exe) for Windows 8.1](http://www.microsoft.com/en-us/download/details.aspx?id=40899)
+[6] Microsoft. [How To Manually Uninstall Visual Studio with MSDN Library](http://support.microsoft.com/kb/2486971)
+
+[7] Microsoft. [Windows Help program (WinHlp32.exe) for Windows 8.1](http://www.microsoft.com/en-us/download/details.aspx?id=40899)
 
 <!--
-[x] Microsoft Community. [UAC and one program used very regulary](http://answers.microsoft.com/en-us/windows/forum/windows_vista-security/uac-and-one-program-used-very-regulary/67bfc4b5-faff-4de4-be48-f395bf1c519d). gbswales, 12/4/2011.
-
 [x] Code Project. [How to install Visual Studio 6 on Windows 7 professional 64bit](http://www.codeproject.com/Tips/408806/How-to-install-Visual-Studio-6-on-Windows-7-profes).
 -->
