@@ -32,15 +32,15 @@ Preparation
 	- .../VS6/VSE600ENU2
 	- .../VS6/VSE600ENU3
 - In the next steps, *Visual Studio 6.0 Installer* will prepare the folders to perform the installation from.
-- Specify the root folder where to prepare the folders to install from via 
-	`File > Set Root folder...`
+- Specify the root folder where to prepare the folders to install from via  
+	`File > Set Root folder...`  
 	for me this is `D:\Users\Martin\VS6-ROOT`
 - Click `Step 1: Prepare Visual Studion 6.0 ENT` and specify the path to CD #1 of the Visual Studio 6.0 CD you collected above, `.../VS6/VSE600ENU1`. 
 - Click `Step 2: Prepare MSDN Library` and specify the path to CD #1 of the MSDN Library CD you collected above, `.../VS6/MSDN CD1`.
 - Click `Step 3: Prepare Service Pack 6` and specify the path to the folder (CD)with Service Pack 6 you collected above, `.../VS6/EN_VS60SP6`.
 
 Further preparation:
-- Create folder `C:\Program Files (uac)`
+- Create folder `C:\Program Files (uac)`  
 	The Visual Studio development environment files will be installed here to prevent the [UAC](http://en.wikipedia.org/wiki/User_Account_Control) to intervene [4]. That would happen when Visual Studio would be installed to `C:\Program Files (x86)` [4].
 - Make sure that `Microsoft Visual Studio` folders from previous *Visual Studio 6* installations are removed as well as its registry entries [5].
 
@@ -50,13 +50,13 @@ Install Visual Studio 6
 ------------------------
 
 - Start the *Visual Studio 6.0 Installer*
-- Specify root folder with installation CDs as prepared above via `File > Set Root folder...`
-	for me `D:\Users\Martin\VS6-ROOT`
+- Specify root folder with installation CDs as prepared above via `File > Set Root folder...`  
+	for me this is `D:\Users\Martin\VS6-ROOT`
 - Select Visual Studio  6.0 Enterprise (or Professional)
 - Click `Install Visual Studio 6.0 ENT`
-	- Choose folder for common files:
+	- Choose folder for common files:  
 		**`C:\Program Files (uac)`**`\Microsoft Visual Studio\Common`
-	- Select desired products
+	- Select desired products  
 		**Note:** For Windows8.x, from Data Access main option, disable the item: ADO, RDS and OLE DB Providers  
 	- Restart Windows
 	- Deselect *Install MSDN*, don't install anything further now
@@ -73,7 +73,7 @@ Prevent compatibility check interception
 ------------------------------------------
 Trying to run MSDEV.EXE now will result in a *Microsoft (R) Developer Studio has stopped working* dialog. To cure this:
 
-- Rename `MSDEV.EXE` to `MSDEV8.EXE`
+- Rename `MSDEV.EXE` to `MSDEV8.EXE`  
 	`MSDEV.EXE` is located in C:\Program Files (x86)\Microsoft Visual Studio\Common\MSDev98\Bin
 - On `MSDEV8.EXE`, change Properties, Compatibility to: *Windows 7*
 
