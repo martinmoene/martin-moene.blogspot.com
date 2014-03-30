@@ -49,7 +49,7 @@ Install Visual Studio 6
 ------------------------
 
 - Start the *Visual Studio 6.0 Installer*
-- Note: in section Preparation above we already specified the root folder with prepared installation CDs via `File > Set Root folder...` (`D:\Users\Martin\VS6-ROOT`)
+- Note: in section Preparation above we already specified the root folder with prepared installation CDs via `File > Set Root folder...` (`D:\Users\Martin\VS6-ROOT`).
 - Select Visual Studio  6.0 Enterprise (or Professional).
 - Click `Install Visual Studio 6.0 ENT`
 	- Choose folder for common files:  
@@ -63,7 +63,7 @@ Install Visual Studio 6
 	- Accept several defaults
 	- Press `Full` button
 - Click `Install Service Pack 6`
-	- Accept several defaults.
+	- Accept several defaults
 	- Press `Full` button
 
 <a id="compatibility"></a>
@@ -72,8 +72,8 @@ Prevent compatibility check interception
 Trying to run MSDEV.EXE now will result in a *Microsoft (R) Developer Studio has stopped working* dialog. To cure this:
 
 - Rename `MSDEV.EXE` to `MSDEV8.EXE`  
-	`MSDEV.EXE` is located in C:\Program Files (x86)\Microsoft Visual Studio\Common\MSDev98\Bin
-- On `MSDEV8.EXE`, change Properties, Compatibility to: *Windows 7*
+	`MSDEV.EXE` is located in C:\Program Files (x86)\Microsoft Visual Studio\Common\MSDev98\Bin.
+- On `MSDEV8.EXE`, change Properties, Compatibility to: *Windows 7*:
 
 	![](https://github.com/martinmoene/martin-moene.blogspot.com/blob/master/How%20to%20install%20Visual%20Studio%206%20on%20Windows%208.1/MSDEV8.EXE-Properties.png?raw=true)
 
