@@ -23,14 +23,23 @@ Note: many default actions are omitted from the following description.
 Preparation
 -------------
 - Download and unzip [Visual Studio 6.0 Installer](http://nuke.vbcorner.net/Articles/VB60/VisualStudio6Installer/tabid/93/language/en-US/Default.aspx) [1][2]
-- Start *Visual Studio 6.0 Installer* and Read its help `?`
-- Copy contents of Visual Studio Professional / Enterprise CDs to hard disk under a common root, for example [3]: 
+- Start *Visual Studio 6.0 Installer* and read its help `?`
+- Copy contents of Visual Studio Professional / Enterprise CDs to hard disk under a common folder, for example [3]: 
 	- .../VS6/[EN_VS60SP6](http://www.microsoft.com/en-us/download/details.aspx?id=9183)
 	- .../VS6/MSDN CD1
 	- .../VS6/MSDN CD2
 	- .../VS6/VSE600ENU1
 	- .../VS6/VSE600ENU2
 	- .../VS6/VSE600ENU3
+- In the next steps, *Visual Studio 6.0 Installer* will prepare the folders to perform the installation from.
+- Specify the root folder where to prepare the folders to install from via 
+`File > Set Root folder...`
+	for me this is `D:\Users\Martin\VS6-ROOT`
+- Click `Step 1: Prepare Visual Studion 6.0 ENT` and specify the path to CD #1 of the Visual Studio 6.0 CD you collected above, `.../VS6/VSE600ENU1`. 
+- Click `Step 2: Prepare MSDN Library` and specify the path to CD #1 of the MSDN Library CD you collected above, `.../VS6/MSDN CD1`.
+- Click `Step 3: Prepare Service Pack 6` and specify the path to the folder (CD)with Service Pack 6 you collected above, `.../VS6/EN_VS60SP6`.
+
+Further preparation:
 - Create folder `C:\Program Files (uac)`
 	The Visual Studio development environment files will be installed here to prevent the [UAC](http://en.wikipedia.org/wiki/User_Account_Control) to intervene [4]. That would happen when Visual Studio would be installed to `C:\Program Files (x86)` [4].
 - Make sure that `Microsoft Visual Studio` folders from previous *Visual Studio 6* installations are removed as well as its registry entries [5].
@@ -41,7 +50,7 @@ Install Visual Studio 6
 ------------------------
 
 - Start the *Visual Studio 6.0 Installer*
-- Specify root folder with installation CDs via `File > Set Root folder...`
+- Specify root folder with installation CDs as prepared above via `File > Set Root folder...`
 	for me `D:\Users\Martin\VS6-ROOT`
 - Select Visual Studio  6.0 Enterprise (or Professional)
 - Click `Install Visual Studio 6.0 ENT`
