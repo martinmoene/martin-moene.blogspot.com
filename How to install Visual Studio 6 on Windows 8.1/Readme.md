@@ -7,7 +7,7 @@ To install Visual Studio 6 on a computer running Windows 8.1 you need to take se
 1. [Preparation](#preparation)  
 2. [Install Visual Studio 6](#install)  
 3. [Prevent compatibility check interception](#compatibility)  
-4. [Enable using devenv from the command line](#commandline)  
+4. [Enable using msdev from the command line](#commandline)  
 5. [Create a VC6 command prompt](#prompt)  
 6. [Wrap up](#wrapup)  
 7. [Notes and references](#references)  
@@ -71,9 +71,9 @@ Trying to run MSDEV.EXE now will result in a
 
 
 <a id="commandline"></a>
-Enable using devenv from the command line
+Enable using msdev from the command line
 -------------------------------------------
-To enable using `DEVENV8.EXE` under the original name from the command line I created program [devenv.cpp](). 
+To enable using `MSDEV8.EXE` under the original name from the command line I created program [msdev.cpp](https://github.com/martinmoene/martin-moene.blogspot.com/blob/master/How%20to%20install%20Visual%20Studio%206%20on%20Windows%208.1/msdev.cpp). 
 ```C++
 #include <process.h>
 
