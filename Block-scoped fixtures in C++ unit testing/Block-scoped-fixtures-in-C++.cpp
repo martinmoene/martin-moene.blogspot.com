@@ -5,10 +5,10 @@
 #define Given( context ) \
     for ( int section = 0, count = 1; section < count; count -= 0==section++ )
 
-#define When( action ) WhenThen( action )
-#define Then( result ) WhenThen( result )
+#define When( action ) Section( action )
+#define Then( result ) Section( result )
 
-#define WhenThen( text ) \
+#define Section( text ) \
     static int UNIQUE( id ) = 0; \
     if ( run now = run( UNIQUE( id ), section, count ) ) \
         for ( int section = 0, count = 1; section < count; count -= 0==section++ )
