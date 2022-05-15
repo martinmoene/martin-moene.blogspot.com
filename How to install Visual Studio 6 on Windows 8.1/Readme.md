@@ -9,8 +9,9 @@ To install Visual Studio 6 on a computer running Windows 8.1 you need to take se
 3. [Prevent compatibility check interception](#compatibility)  
 4. [Enable using msdev from the command line](#commandline)  
 5. [Create a VC6 command prompt](#prompt)  
-6. [Wrap up](#wrapup)  
-7. [Notes and references](#references)  
+6. [Fix resource editor](#fixre)  
+7. [Wrap up](#wrapup)  
+8. [Notes and references](#references)  
 
 The  procedure uses the nice *Visual Studio 6.0 Installer* by Giorgio Brausi [1][2]. Without using it, the installation didn't finish properly and no uninstall entry was created. 
  
@@ -130,6 +131,11 @@ Usage:
 
 prompt>
 ```
+
+<a name="fixre"></a>
+Fix resource editor
+---------------------
+In [issue #8](https://github.com/martinmoene/martin-moene.blogspot.com/issues/7) of 15 May 2022, [@anzz1](https://github.com/anzz1) describes how to fix the memory allocation error in the resource editor `devres.pkg` that leads it to crash.
 
 <a name="wrapup"></a>
 Wrap up
